@@ -12,21 +12,15 @@ $('#btnLogin').click(function () {
         $('#myModal').modal('show');
         $('#tips').text('用户名或密码不能为空!');
     } else {
-        $.post('http://localhost:8000/admin/login', {
-            user_name: userName,
-            password: password
-        }, function (res) {
-            // console.log(res);
-
+        admin.login(userName, password, function (res) {
             if (res.code == 200) {
                 // alert('登录成功');
                 window.location.href = './index.html';
-
             } else if (res.code == 400) {
                 // alert(res.msg);
                 $('#myModal').modal('show');
                 $('#tips').text(res.msg);
             }
-        })
+        });
     }
 })
