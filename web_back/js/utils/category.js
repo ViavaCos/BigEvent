@@ -12,5 +12,13 @@ var category = {
         }, function (res) {
             callBack(res);
         })
+    },
+
+    delete: function (id, callBack) {
+        $.post(URLList.category_delete, {
+            id: id
+        }, function (res) {
+            callBack(res);
+        })
     }
 }

@@ -1,19 +1,32 @@
-$(function () {
+// 封装页面点击删除调用的函数，需要放在入口函数外，否则提示未定义
+function deleteTr(id) {
+    $('#myModal').modal('show');
 
-    function categoryQuery() {
-        category.query(function (res) {
+    $('#exit').click(function () {
+        category.delete(id, function (res) {
             // console.log(res);
-            if (res.code === 200) {
-                // var htmlStr = template('tmp', res);
-                // $('#categoryWrapper tbody').html(htmlStr);
-                // console.log(htmlStr);
-
-                // 利用模板引擎，将数据和模板渲染成html结构
-                $('#categoryWrapper tbody').html(template('tmp', res));
-            }
+            categoryQuery();
+            $('#myModal').modal('hide');
         })
-    }
+    })
+}
 
+// 封装页面查询功能
+function categoryQuery() {
+    category.query(function (res) {
+        // console.log(res);
+        if (res.code === 200) {
+            // var htmlStr = template('tmp', res);
+            // $('#categoryWrapper tbody').html(htmlStr);
+            // console.log(htmlStr);
+
+            // 利用模板引擎，将数据和模板渲染成html结构
+            $('#categoryWrapper tbody').html(template('tmp', res));
+        }
+    })
+}
+
+$(function () {
     // 页面载入后获取服务器类别
     categoryQuery();
 
@@ -42,5 +55,6 @@ $(function () {
             }
         })
     })
+
 
 })
