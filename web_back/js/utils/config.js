@@ -8,5 +8,7 @@ var URLList = {
     category_search: publicURL + '/admin/category_search',
     category_add: publicURL + '/admin/category_add',
     category_edit: publicURL + '/admin/category_edit',
-    category_delete: publicURL + '/admin/category_delete'
+    category_delete: publicURL + '/admin/category_delete',
+
+    article_search: publicURL + '/admin/search',
 }
