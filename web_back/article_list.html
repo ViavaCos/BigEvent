@@ -31,8 +31,8 @@
                         </select>
                         <select id="selStatus" name="" class="form-control input-sm">
                             <option value="">所有状态</option>
-                            <option value="drafted">草稿</option>
-                            <option value="published">已发布</option>
+                            <option value="草稿">草稿</option>
+                            <option value="已发布">已发布</option>
                         </select>
                         <button id="btnSearch" type="button" class="btn btn-default btn-sm">筛选</button>
                     </form>
@@ -96,6 +96,28 @@
         </div>
     </div>
 
+    <!-- 模态框 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">信息提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你确定要删除吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-default" id="exit">确定</button>
+                </div>
+
+                <div style="padding: 10px; background:pink;" id="tips"></div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <script>
         // 设置左侧菜单
         $('#release_btn').click(function () {
@@ -108,6 +130,7 @@
     <script src="./js/utils/article.js"></script>
     <script src="./js/utils/category.js"></script>
     <script src="./js/lib/template-web.js"></script>
+    <script src="./js/bootstrap/js/bootstrap.min.js"></script>
     <script id="tmp" type="text/html">
         {{each data item}}
         <tr>
@@ -123,7 +146,7 @@
 
             <td class="text-center">
                 <a href="article_edit.html" class="btn btn-default btn-xs">编辑</a>
-                <a href="javascript:deleteTr( 1005 );" class="btn btn-danger btn-xs">删除</a>
+                <a href="javascript:;" data-id="{{item.id}}" class="btn btn-danger btn-xs del">删除</a>
             </td>
         </tr>
 

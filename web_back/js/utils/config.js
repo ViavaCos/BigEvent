@@ -11,4 +11,5 @@ var URLList = {
     category_delete: publicURL + '/admin/category_delete',
 
     article_search: publicURL + '/admin/search',
+    article_del: publicURL + '/admin/article_delete',
 }

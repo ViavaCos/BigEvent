@@ -5,5 +5,13 @@ var article = {
             function (res) {
                 callBack(res);
             })
+    },
+
+    del: function (id, callBack) {
+        $.get(URLList.article_del, {
+            id: id
+        }, function (res) {
+            callBack(res);
+        })
     }
 }
