@@ -8,18 +8,22 @@ function editTr(obj) {
     type.id = obj.id;
 }
 
+var delID;
+
 // 封装页面点击删除调用的函数，需要放在入口函数外，否则提示未定义
 function deleteTr(id) {
     $('#myModal').modal('show');
-
-    $('#exit').click(function () {
-        category.delete(id, function (res) {
-            // console.log(res);
-            categoryQuery();
-            $('#myModal').modal('hide');
-        })
-    })
+    delID = id;
 }
+
+// 写在函数内，会导致事件被叠加绑定
+$('#exit').click(function () {
+    category.delete(delID, function (res) {
+        // console.log(res);
+        categoryQuery();
+        $('#myModal').modal('hide');
+    })
+})
 
 // 封装页面查询功能
 function categoryQuery() {
