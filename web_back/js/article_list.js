@@ -77,12 +77,11 @@ $(function () {
 
         // 隐藏提示框
         $('#tips').hide();
-        
+
     })
     $('#exit').click(function () {
         article.del(id, function (res) {
             // console.log(res);
-
             if (res.code === 200) {
                 getArticle();
                 $('#myModal').modal('hide');
@@ -92,4 +91,9 @@ $(function () {
         })
     })
 
+
+    // 编辑功能
+    $('#articleContent').on('click','#editArticle',function(){
+        $(this).siblings().attr('data-id');
+    })
 })

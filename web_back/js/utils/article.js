@@ -13,5 +13,31 @@ var article = {
         }, function (res) {
             callBack(res);
         })
+    },
+
+    add: function (fd, callBack) {
+        $.ajax({
+            url: URLList.article_add,
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: fd,
+            success: function (res) {
+                callBack(res);
+            },
+        })
+    },
+
+    edit: function (fd, callBack) {
+        $.ajax({
+            url: URLList.article_edit,
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: fd,
+            success: function (res) {
+                callBack(res);
+            },
+        })
     }
 }

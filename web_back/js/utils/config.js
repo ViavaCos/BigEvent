@@ -12,4 +12,6 @@ var URLList = {
 
     article_search: publicURL + '/admin/search',
     article_del: publicURL + '/admin/article_delete',
+    article_add: publicURL + '/admin/article_publish',
+    article_edit: publicURL + '/admin/article_edit'
 }
