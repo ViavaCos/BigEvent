@@ -81,11 +81,15 @@ $(function () {
             // console.log(res);
             if (res.code === 200) {
 
-                res.data.forEach(function (item) {
-                    item.dt = formatTime(item.dt);
-                    // console.log(item);
-                })
-                // template.defaults.imports.formatTime = formatTime;
+                // 方式一：
+                // res.data.forEach(function (item) {
+                //     item.dt = formatTime(item.dt);
+                //     // console.log(item);
+                // })
+
+                // 方式二
+                template.defaults.imports.formatTime = formatTime;
+                
                 $('#comment_list').html(template('tmp', res));
             }
         })

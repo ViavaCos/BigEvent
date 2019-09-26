@@ -34,5 +34,5 @@ $('#saveChange').click(function () {
             $('#tips').text(res.msg);
         }
     })
-    console.log($("#dateinput").val());
+    // console.log($("#dateinput").val());
 })

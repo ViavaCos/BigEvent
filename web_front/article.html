@@ -236,7 +236,7 @@
         {{each data item}}
         <div class="comment_detail_list">
             <div class="person_pic fl">{{item.name.substr(0,1)}}</div>
-            <div class="name_time fl"><b>{{item.name}}</b><span>{{item.dt}}</span></div>
+            <div class="name_time fl"><b>{{item.name}}</b><span>{{formatTime(item.dt)}}</span></div>
             <div class="comment_text fl">
                 {{item.content}}
             </div>
