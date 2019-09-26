@@ -26,5 +26,24 @@ var admin = {
         $.get(URLList.getAdminInfo, function (res) {
             callBack(res);
         })
+    },
+
+    getUserInfo: function (callBack) {
+        $.get(URLList.getUserInfo, function (res) {
+            callBack(res);
+        })
+    },
+
+    setUserInfo: function (fd, callBack) {
+        $.ajax({
+            url: URLList.setUserInfo,
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: fd,
+            success: function (res) {
+                callBack(res);
+            }
+        })
     }
 }

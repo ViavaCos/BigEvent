@@ -18,6 +18,7 @@ var URLList = {
 
     comment_show: publicURL + '/admin/comment_count',
 
-
+    getUserInfo: publicURL + '/admin/userinfo_get',
+    setUserInfo: publicURL + '/admin/userinfo_edit',
 
 }
