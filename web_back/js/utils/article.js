@@ -39,5 +39,12 @@ var article = {
                 callBack(res);
             },
         })
+    },
+
+    showArticleCount: function (callBack) {
+        $.get(URLList.article_showArticleCount, function (res) {
+            callBack(res);
+        })
+
     }
 }
