@@ -38,6 +38,7 @@ $(function () {
                     prev: '上一页',
                     next: '下一页',
                     last: '尾页',
+                    initiateStartPageClick: false, // 默认不点击首页
                     onPageClick: function (event, page) {
                         // 设置分页切换效果
                         currentPage = page;
